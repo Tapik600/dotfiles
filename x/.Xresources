@@ -1,0 +1,5 @@
+! SOURCE TERMINAL COLORS !
+#include ".config/xres/gruvbox-material-dark.xresources"
+
+! SOURCE PROGRAM SPECIFIC FILES !
+#include ".config/urxvt/config"

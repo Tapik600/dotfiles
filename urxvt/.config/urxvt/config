@@ -1,0 +1,12 @@
+!! URxvt Appearance
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.internalBorder: 10
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt*scrollstyle: plain
+
+URxvt*font: xft:DejaVu Sans Mono:size=9
