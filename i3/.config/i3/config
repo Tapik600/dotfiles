@@ -67,13 +67,13 @@ bindsym $mod+Shift+q kill
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
-set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
-set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
-set $ws10 "10: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -114,7 +114,7 @@ bindsym $mod+Shift+r restart
 # manage i3 session
 bindsym $mod+Shift+e exec "i3-nagbar -f 'pango:monospace 11' -t warning -m ' Exit request detected  Do you really want to exit i3  This will end your X session.' -B 'Yes,  i3' 'i3-msg exit'"
 
-mode "exit:  [l],  [r],  [p]" {
+mode "exit:  logout,  reboot,  poweroff" {
     bindsym l exec i3-msg exit
     bindsym r exec sudo reboot
     bindsym p exec sudo poweroff
@@ -123,7 +123,7 @@ mode "exit:  [l],  [r],  [p]" {
     bindsym Return mode "default"
 
 }
-bindsym $mod+x mode "exit:  [l],  [r],  [p]"
+bindsym $mod+x mode "exit:  logout,  reboot,  poweroff"
 
 # resize window
 bindsym $mod+r mode "  "
@@ -166,10 +166,10 @@ gaps outer 0
 for_window [class=".*"] title_format "<b> %title</b>"
 
 for_window [class="Lxappearance"] floating enable sticky
-for_window [class="Chromium"] floating enable sticky
+# for_window [class="Chromium"] floating enable sticky
 
 # assign [class="Code"] $ws1
-assign [class="Chromium"] $ws2
+# assign [class="Chromium"] $ws2
 
 # startup applications
 exec_always setxkbmap -layout us,ru -option grp:toggle

@@ -33,52 +33,52 @@ chmod +x $HOME/.config/polybar/launch.sh
 chmod +x $HOME/.config/polybar/updates.sh
 
 printf $CYAN$BOLD'\n== %s %.30s>\n\n'$OFF \
-"Installing windows manager" \
-"========================================================="
+  "Installing windows manager" \
+  "========================================================="
 sudo apt install --no-install-recommends -y \
-                xserver-xorg \
-                xinit \
-                x11-xserver-utils 
+  xserver-xorg \
+  xinit \
+  x11-xserver-utils
 
 sudo apt install -y \
-                xcb \
-                xcb-proto \
-                libxcb1-dev \
-                libxcb-keysyms1-dev \
-                libxcb-icccm4-dev \
-                libxcb-cursor-dev \
-                libxcb-util0-dev \
-                libxcb-randr0-dev \
-                libxcb-xinerama0-dev \
-                libxcb-xkb-dev \
-                libxcb-xrm0 \
-                libxcb-xrm-dev \
-                libxcb-shape0 \
-                libxcb-shape0-dev \
-                libcairo2-dev \
-                libxcb-ewmh-dev \
-                libxcb-image0-dev \
-                libxcb-composite0-dev \
-                libxkbcommon-dev \
-                libxkbcommon-x11-dev \
-                libpango1.0-dev \
-                libyajl-dev libev-dev \
-                libjsoncpp-dev \
-                libstartup-notification0-dev \
-                build-essential \
-                python-xcbgen \
-                python3-sphinx \
-                python3-packaging \
-                dh-autoreconf \
-                libiw-dev \
-                pkg-config \
-                meson \
-                cmake \
-                cmake-data
+  xcb \
+  xcb-proto \
+  libxcb1-dev \
+  libxcb-keysyms1-dev \
+  libxcb-icccm4-dev \
+  libxcb-cursor-dev \
+  libxcb-util0-dev \
+  libxcb-randr0-dev \
+  libxcb-xinerama0-dev \
+  libxcb-xkb-dev \
+  libxcb-xrm0 \
+  libxcb-xrm-dev \
+  libxcb-shape0 \
+  libxcb-shape0-dev \
+  libcairo2-dev \
+  libxcb-ewmh-dev \
+  libxcb-image0-dev \
+  libxcb-composite0-dev \
+  libxkbcommon-dev \
+  libxkbcommon-x11-dev \
+  libpango1.0-dev \
+  libyajl-dev libev-dev \
+  libjsoncpp-dev \
+  libstartup-notification0-dev \
+  build-essential \
+  python-xcbgen \
+  python3-sphinx \
+  python3-packaging \
+  dh-autoreconf \
+  libiw-dev \
+  pkg-config \
+  meson \
+  cmake \
+  cmake-data
 
 printf $YELLOW'\n%s %.30s\n\n'$OFF \
-"Installing i3-gaps" \
-".........................................................."
+  "Installing i3-gaps" \
+  ".........................................................."
 
 git clone https://github.com/Airblader/i3.git --depth 1 $DWL_FOLDER/i3
 
@@ -88,8 +88,8 @@ ninja
 sudo ninja install
 
 printf $YELLOW'\n%s %.30s\n\n'$OFF \
-"Installing polybar" \
-".........................................................."
+  "Installing polybar" \
+  ".........................................................."
 
 git clone --recursive https://github.com/polybar/polybar $DWL_FOLDER/polybar
 
@@ -100,32 +100,30 @@ make -j$(nproc)
 sudo make install
 
 printf $YELLOW'\n%s %.30s\n\n'$OFF \
-"Download GTK+ GruvBox Theme " \
-".........................................................."
+  "Download GTK+ GruvBox Theme " \
+  ".........................................................."
 
 THEMES_FOLDER=$HOME/.themes
 ICONS_FOLDER=$HOME/.icons
 
 mkdir $THEMES_FOLDER $ICONS_FOLDER
 
-if [ ! -d "$DWL_FOLDER/gruvbox-material-gtk" ]
-then
+if [ ! -d "$DWL_FOLDER/gruvbox-material-gtk" ]; then
   git clone https://github.com/sainnhe/gruvbox-material-gtk.git --depth 1 $DWL_FOLDER/gruvbox-material-gtk
 fi
 
-if [ ! -d "$THEMES_FOLDER/gruvbox-material-gtk" ]
-then
+if [ ! -d "$THEMES_FOLDER/gruvbox-material-gtk" ]; then
   cp -r $DWL_FOLDER/gruvbox-material-gtk/themes/* $THEMES_FOLDER
   cp -r $DWL_FOLDER/gruvbox-material-gtk/icons/* $ICONS_FOLDER
 fi
 
 printf $CYAN$BOLD'\n== %s %.30s>\n\n'$OFF \
-"Installing C++ compilers" \
-"========================================================="
+  "Installing C++ compilers" \
+  "========================================================="
 
 printf $YELLOW'\n%s %.30s\n\n'$OFF \
-"Installing GCC-10.1.0" \
-".........................................................."
+  "Installing GCC-10.1.0" \
+  ".........................................................."
 
 git clone https://bitbucket.org/sol_prog/raspberry-pi-gcc-binary.git --depth 1 $DWL_FOLDER/gcc
 cd $DWL_FOLDER/gcc
@@ -161,8 +159,8 @@ sudo ldconfig
 # clang++ --version
 
 printf $CYAN$BOLD'\n== %s %.30s>\n\n'$OFF \
-"Installing VSCode" \
-"========================================================="
+  "Installing VSCode" \
+  "========================================================="
 
 sudo apt install -y code
 
@@ -172,8 +170,15 @@ code --install-extension cschlosser.doxdocgen
 code --install-extension jeff-hykin.better-cpp-syntax
 code --install-extension twxs.cmake
 code --install-extension ms-vscode.cpptools
+code --install-extension jeff-hykin.better-cpp-syntax
 code --install-extension ms-vscode.cmake-tools
 code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension chunsen.bracket-select
+code --install-extension fabiospampinato.vscode-diff
+code --install-extension eamodio.gitlens
+code --install-extension gruntfuggly.todo-tree
+code --install-extension tomoki1207.pdf
+
 
 code --enable-proposed-api pkief.material-icon-theme
 # code --enable-proposed-api gracefulpotato.gruvbox-ish
@@ -183,16 +188,16 @@ stow -D setup_scripts
 cd $HOME
 
 printf $YELLOW'\n%s %.30s\n\n'$OFF \
-"Installing software" \
-".........................................................."
+  "Installing software" \
+  ".........................................................."
 
 sudo apt install -y \
-                 rxvt-unicode \
-                 rofi \
-                 feh \
-                 htop \
-                 ranger \
-                 chromium-browser \
-                 rpi-chromium-mods \
-                 lxappearance \
-                 udisks2
+  rxvt-unicode \
+  rofi \
+  feh \
+  htop \
+  ranger \
+  chromium-browser \
+  rpi-chromium-mods \
+  lxappearance \
+  udisks2
