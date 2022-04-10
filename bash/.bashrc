@@ -14,6 +14,8 @@ HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+HISTIGNORE='ls:ps:history*'
+HISTTIMEFORMAT='%d.%m.%Y %H:%M:%S: '
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -89,8 +91,9 @@ fi
 
 # some more ls aliases
 alias ll='ls -l'
-alias la='ls -A'
+alias la='ls -lA'
 alias l='ls -CF'
+md() { mkdir -p "$@" && cd "$@"; }
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -111,8 +114,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=/opt/gcc-10.1.0/bin:$PATH
-export LD_LIBRARY_PATH=/opt/gcc-10.1.0/lib:$LD_LIBRARY_PATH
-
-# export PATH=/usr/local/clang_9.0.0/bin:$PATH
-# export LD_LIBRARY_PATH=/usr/local/clang_9.0.0/lib:$LD_LIBRARY_PATH

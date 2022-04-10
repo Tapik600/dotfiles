@@ -16,10 +16,6 @@ foreground = ${xrdb:foreground}
 focused-bg = ${xrdb:color10}
 mode-bg = ${xrdb:color9}
 
-; Gruvbox material theme
-;background = #bb32302f
-;foreground = #dfbf83
-
 ;==========================================================
 [bar/fullbar]
 monitor = 
@@ -30,7 +26,7 @@ foreground = ${colors.foreground}
 
 modules-left = i3  
 modules-center = title
-modules-right = updates cpu temperature memory wlan xkeyboard date powermenu
+modules-right = cpu temperature memory wlan xkeyboard date
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/memory]
@@ -139,14 +135,6 @@ type = custom/text
 content = 
 click-left = ~/.config/rofi/launchers-git/launcher.sh &
 content-padding = 2
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[module/updates]
-type = custom/script
-exec = ~/.config/polybar/updates.sh
-exec-if = ~/.config/polybar/updates.sh
-tail = true
-interval = 3600
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/separator]
