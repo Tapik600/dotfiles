@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# curl -sLf https://raw.githubusercontent.com/Tapik600/dotfiles/main/scripts/scripts/install.sh | bash
 
 Color_off='\033[0m'       # Text Reset
 
@@ -168,7 +169,6 @@ install_software () {
         vim \
         polybar \
         rxvt-unicode \
-        rofi \
         feh \
         htop \
         ranger \
@@ -197,6 +197,9 @@ install_vscode () {
     code --install-extension eamodio.gitlens
     code --install-extension gruntfuggly.todo-tree
     code --install-extension tomoki1207.pdf
+    code --install-extension byi8220.indented-block-highlighting
+    code --install-extension streetsidesoftware.code-spell-checker
+    code --install-extension streetsidesoftware.code-spell-checker-russian
 }
 
 main () {

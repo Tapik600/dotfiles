@@ -14,12 +14,13 @@ HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-HISTIGNORE='ls:ps:history*'
+HISTIGNORE='startx:ll:la:ls:ps:history*'
 HISTTIMEFORMAT='%d.%m.%Y %H:%M:%S: '
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+PROMPT_COMMAND='history -a'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -93,6 +94,7 @@ fi
 alias ll='ls -l'
 alias la='ls -lA'
 alias l='ls -CF'
+alias backup=$HOME/scripts/backup_projects.sh
 md() { mkdir -p "$@" && cd "$@"; }
 
 # Alias definitions.

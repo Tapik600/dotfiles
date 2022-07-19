@@ -10,3 +10,12 @@ URxvt.scrollBar_right: true
 URxvt*scrollstyle: plain
 
 URxvt*font: xft:DejaVu Sans Mono:size=9
+
+URxvt.urlLauncher: chromium-browser
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
