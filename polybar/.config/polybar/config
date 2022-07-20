@@ -26,7 +26,7 @@ foreground = ${colors.foreground}
 
 modules-left = i3  
 modules-center = title
-modules-right = cpu temperature memory wlan xkeyboard date
+modules-right = cpu temperature memory wlan xkeyboard date 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/memory]
@@ -56,9 +56,10 @@ format-padding = 1
 [module/wlan]
 type = internal/network
 interface = wlan0
+interface-type = wireless
 interval = 5
-label-connected =  %signal%% %essid% [%local_ip%]
-label-disconnected = 
+label-connected =  %signal%% %downspeed% %essid% [%local_ip%]
+label-disconnected =  %signal%% %downspeed% %essid% [%local_ip%]
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [module/temperature]
