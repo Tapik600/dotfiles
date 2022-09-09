@@ -15,7 +15,7 @@ HISTCONTROL=ignoreboth:erasedups
 # append to the history file, don't overwrite it
 shopt -s histappend
 HISTIGNORE='startx:ll:la:ls:ps:history*'
-HISTTIMEFORMAT='%d.%m.%Y %H:%M:%S: '
+# HISTTIMEFORMAT='%d.%m.%Y %H:%M:%S: '
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -37,6 +37,8 @@ shopt -s checkwinsize
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
+
+PROMPT_DIRTRIM=3
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -90,9 +92,15 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)" 
+
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
 # some more ls aliases
-alias ll='ls -l'
-alias la='ls -lA'
+alias ll='ls -lh'
+alias la='ls -lAh'
 alias l='ls -CF'
 alias backup=$HOME/scripts/backup_projects.sh
 md() { mkdir -p "$@" && cd "$@"; }
